@@ -1,0 +1,28 @@
+html {
+  background-color: aqua;
+  margin: 2%;
+}
+
+.chatbox {
+  text-align: center;
+}
+
+.players {
+  background-color: green;
+  border-color: black;
+  border-style
+}
+
+#title {
+  text-align: center;
+  font-family: 'Trebuchet MS',
+    'Lucida Sans Unicode',
+    'Lucida Grande',
+    'Lucida Sans',
+    Arial,
+    sans-serif;
+  border-style: solid;
+  border-radius: 10%;
+  border-width: 10px;
+  border-color: black;
+}

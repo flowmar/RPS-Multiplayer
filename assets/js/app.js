@@ -1,0 +1,3 @@
+// Declare variables
+
+var playerOne;
