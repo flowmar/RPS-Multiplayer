@@ -1,28 +1,63 @@
-html {
-  background-color: aqua;
-  margin: 2%;
+header {
+  font-family: "Bowlby One";
+  color: slategrey;
+  border: solid black 7px;
+  text-align: center;
+  font-weight: bold;
+}
+
+body {
+  font-family: "Source Sans Pro";
+  font-weight: bold;
+  background: black;
+}
+
+.announce {
+  text-align: center;
+  background: red;
+  font-size: larger;
+}
+
+.parent {
+  display: flex;
+  background: green;
+  padding: 10px;
+  font-family: helvetica;
+}
+
+.child {
+  border: solid black 5px;
+  flex-grow: 1;
+  padding: 10px;
+  margin: 10px;
+  height: 300px;
+  line-height: 300px;
+  min-width: 300px;
+  background: yellow;
+  text-align: center;
+}
+
+.player1 {
+  background: red;
+}
+
+.player2 {
+background: blue;
+}
+
+.middle {
+background: green;
+}
+
+.jumbotron {
+  margin-bottom: .5rem;
+}
+
+#input {
+  margin-bottom: 1rem;
 }
 
 .chatbox {
-  text-align: center;
-}
-
-.players {
-  background-color: green;
-  border-color: black;
-  border-style
-}
-
-#title {
-  text-align: center;
-  font-family: 'Trebuchet MS',
-    'Lucida Sans Unicode',
-    'Lucida Grande',
-    'Lucida Sans',
-    Arial,
-    sans-serif;
-  border-style: solid;
-  border-radius: 10%;
-  border-width: 10px;
-  border-color: black;
+  min-height: 100px;
+  min-width: 100%;
 }
