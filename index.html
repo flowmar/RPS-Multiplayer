@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
     <head>
         <meta charset="utf-8">
         <title>Rock, Paper, Scissors</title>
@@ -8,48 +9,57 @@
         <link href="https://fonts.googleapis.com/css?family=Bowlby+One|Source+Sans+Pro" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
+
     <body>
+        <div class="container-fluid">
         <header class="jumbotron bg-inverse text-center" role="banner">
             <h1 class="display-1">Rock, Paper, Scissors</h1>
         </header>
-    <div class="container-fluid">
-         <form class="text-center" id="input">
-                    <input type="text" placeholder="Enter Your Name">
-                    <button class="btn  btn-outline-success bg-faded">Play!</button>
-                </form>
-        <div class="row m-y-2 announce">
-            <div class="col-md-12" id="announce1">
-                Text 1
+        <div class="container-fluid">
+            <form class="text-center" id="input">
+                <input type="text" placeholder="Enter Your Name">
+                <button class="btn  btn-outline-success bg-faded">Play!</button>
+            </form>
+            <div class="row m-y-2 announce">
+                <div class="col-md-12" id="announce1">
+                    Text 1
+                </div>
+            </div>
+            <div class="row m-y-2 announce">
+                <div class="col-md-12 col-offset-md-6" id="announce2">
+                    <p>Text 2 Goes Here</p>
+                </div>
             </div>
         </div>
-        <div class="row m-y-2 announce">
-            <div class="col-md-12 col-offset-md-6" id="announce2">
-                <p>Text 2 Goes Here</p>
+        <div class="row m-y-2 parent">
+            <div class="player1 child col-md-pull">
+                1
+            </div>
+            <div class="middle child col-md-3">
+                2
+            </div>
+            <div class="player2 child col-md-push-3">
+                3
             </div>
         </div>
-    </div>
-    <div class="parent">
-        <div class="player1 child col-md-pull">
-        1
-        </div>
-        <div class="middle child col-md-3">
-            2
-        </div>
-        <div class="player2 child col-md-push-3">
-            3
-        </div>
-    </div>
-    <div class="container">
         <div class="row">
-            <div class="col-md-10 col-md-offset-2 chatbox">
-
+            <div class="container chatbox">
+                <div class="message-display">
+MESSAGE
+                </div>
+                <form class="text-right bg-warning message-input">
+                    <input type="text" placeholder="Enter a message">
+                    <button class="btn bg-success">Submit</button>
+                </form>
             </div>
         </div>
-    </div>
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
-    <script src="assets/js/app.js"></script>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+        <script src="assets/js/app.js"></script>
     </body>
-    </html>
+
+</html>
