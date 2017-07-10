@@ -8,44 +8,80 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
         <link href="https://fonts.googleapis.com/css?family=Bowlby+One|Source+Sans+Pro" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/style.css">
+        <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
     </head>
 
     <body>
         <div class="container-fluid">
-        <header class="jumbotron bg-inverse text-center" role="banner">
-            <h1 class="display-1">Rock, Paper, Scissors</h1>
-        </header>
-        <div class="container-fluid">
-            <form class="text-center" id="input">
-                <input type="text" placeholder="Enter Your Name">
-                <button class="btn  btn-outline-success bg-faded">Play!</button>
-            </form>
+            <header class="jumbotron bg-inverse text-center" role="banner">
+                <h1 class="display-1">Rock, Paper, Scissors</h1>
+            </header>
+            <div class="row">
+                <div class="col md-12 text-center">
+                    <form class="text-center">
+                        <input type="text" id="nameInput" placeholder="Enter Your Name">
+                        <button class="btn  btn-outline-success bg-inverse" id="play">Play!</button>
+                    </form>
+                </div>
+            </div>
             <div class="row m-y-2 announce">
                 <div class="col-md-12" id="announce1">
-                    Text 1
+                    Please enter your username above and click 'Play'
                 </div>
             </div>
             <div class="row m-y-2 announce">
                 <div class="col-md-12 col-offset-md-6" id="announce2">
-                    <p>Text 2 Goes Here</p>
+                    <p>Waiting For Players....</p>
                 </div>
             </div>
         </div>
-        <div class="row m-y-2 parent">
-            <div class="player1 child col-md-pull">
-                1
-            </div>
-            <div class="middle child col-md-3">
-                2
-            </div>
-            <div class="player2 child col-md-push-3">
-                3
+        <!-- Game Board -->
+        <!-- Stats Area -->
+        <div class="container">
+            <div class="row stats">
+                <div class="col-md-4 text-center">
+                    <span id="p1name">
+
+</span><br>
+                    <span id="p1wins">Wins:</span>
+                    <span id="p1losses">Losses:</span>
+                </div>
+                <div class="col-md-4">
+
+                </div>
+                <div class="col-md-4 text-center">
+                    <span id="p2name">
+
+                </span>
+                    <br>
+                    <span id="p2wins">Wins:</span>
+                    <span id="p2losses">Losses:</span>
+
+                </div>
             </div>
         </div>
+
+        <!-- Play Area -->
+        <div class="container-fluid">
+            <div class="row m-y-2 parent">
+                <!-- Player 1 Area -->
+                <div class="player1 child col-md-pull" id="playerOne">
+                </div>
+                <!-- Middle Field -->
+                <div class="middle child col-md-3" id="middle">
+                    <button class="btn btn-lg btn-success" id="start">Start Game!</button>
+                </div>
+                <!-- Player 2 Area -->
+                <div class="player2 child col-md-push-3" id="playerTwo">
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Area -->
+        <div class="container">
         <div class="row">
             <div class="container chatbox">
                 <div class="message-display">
-MESSAGE
                 </div>
                 <form class="text-right bg-warning message-input">
                     <input type="text" placeholder="Enter a message">
@@ -54,8 +90,6 @@ MESSAGE
             </div>
         </div>
         </div>
-
-        <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>

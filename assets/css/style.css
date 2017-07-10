@@ -90,3 +90,16 @@ background: green;
   border-width: 1px;
   border-style: groove;
 }
+
+.stats {
+  color: white;
+  font-weight: bold;
+}
+
+#p1name {
+font-size: 24px;
+}
+
+#p2name {
+  font-size: 24px;
+}
