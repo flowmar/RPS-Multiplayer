@@ -12,10 +12,12 @@ firebase.initializeApp(config);
 // Create a reference to the database
 var database = firebase.database();
 
+database.ref('/turn').set({
+  turn:0
+});
+
 // Declare variables
 var name = "";
-var wins = 0;
-var losses = 0;
 var playerOne = "";
 var playerOneExists = false;
 var playerTwo = "";
@@ -26,8 +28,12 @@ var p2wins = 0;
 var p2losses = 0;
 var p1choice = "";
 var p2choice = "";
-var turn = 0;
+var turn = database.ref('turn').set({
+turn:0
+});
 
+console.log(turn);
+console.log(p1wins);
 var p1_buttons = $("<button class='btn btn-primary' id='p1rock'>Rock</button> <button class='btn btn-warning' id='p1paper'>Paper</button> <button class='btn btn-info'id='p1scissors'>Scissors</button>");
 
 var p2_buttons = $("<button class='btn btn-primary' id='p2rock'>Rock</button> <button class='btn btn-warning' id='p2paper'>Paper</button> <button class='btn btn-info'id='p2scissors'>Scissors</button>");
@@ -56,9 +62,10 @@ $("#play").on('click', function () {
 
       // Create a Player 1 Object in Firebase
       database.ref('/players/1').set({
-        name: name,
-        wins: wins,
-        losses: losses
+        name: playerOne,
+        wins: p1wins,
+        losses: p1losses,
+        choice: p1choice
       });
 
       // Add player 1 to the Game Board
@@ -81,9 +88,10 @@ $("#play").on('click', function () {
 
       // Create a Player 2 Object in Firebase
       database.ref('/players/2').set({
-        name: name,
-        wins: wins,
-        losses: losses
+        name: playerTwo,
+        wins: p2wins,
+        losses: p2losses,
+        choice: p2choice
       });
 
       // Add Player 2 to the game board
@@ -120,29 +128,33 @@ function startGame() {
   $('#announce1').text('Let\'s Play!!');
   $('#announce2').text('');
   turn = 1;
+  database.ref('turn').update({
+    turn:1
+  });
+  console.log(turn);
+  choices();
+}
 
-while (turn === 1){
+function choices() {
+if (turn === 1){
   $('#announce2').text('Player 1\'s Turn');
   // Highlight Player One's area
   $('#playerOne').css({ "border-color": "white" });
 // Functions to handle clicks on player buttons
   $(document).on('click', "#p1rock", function() {
     p1choice = "rock";
-    turn++;
     console.log(p1choice);
   });
   $(document).on('click', "#p1paper", function() {
     p1choice = "paper";
-    turn++;
     console.log(p1choice);
   });
   $(document).on('click', "#p1scissors", function() {
     p1choice = "scissors";
-    turn++;
     console.log(p1choice);
   });
 }
-while (turn === 2) {
+if (turn === 2) {
   // Highlight Player 2's area
     $('#playerOne').css({ "border-color": "white" });
 
